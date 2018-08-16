@@ -1,6 +1,7 @@
 require 'set'
 require 'flipper'
 require 'active_record'
+require 'octopus'
 
 module Flipper
   module Adapters
@@ -9,6 +10,8 @@ module Flipper
 
       # Private: Do not use outside of this adapter.
       class Feature < ::ActiveRecord::Base
+        not_sharded
+
         self.table_name = [
           ::ActiveRecord::Base.table_name_prefix,
           "flipper_features",
@@ -18,6 +21,8 @@ module Flipper
 
       # Private: Do not use outside of this adapter.
       class Gate < ::ActiveRecord::Base
+        not_sharded
+
         self.table_name = [
           ::ActiveRecord::Base.table_name_prefix,
           "flipper_gates",

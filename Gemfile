@@ -22,6 +22,10 @@ gem 'webmock', '~> 2.0'
 # for active support tests in test/ and only needed for ruby 2.2.x
 gem 'test-unit', '~> 3.0'
 
+gem 'ar-octopus',
+  git: 'https://github.com/Hiptic/octopus.git',
+  branch: 'testing-rails5-v2'
+
 group(:guard) do
   gem 'guard', '~> 2.12.5'
   gem 'guard-rubocop', '~> 1.3.0'
